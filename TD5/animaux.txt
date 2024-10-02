@@ -1,0 +1,5 @@
+girafe;rose;2
+tigre;rouge;3
+singe;jaune;1
+éléphant;bleu;4
+poulet;noir;6

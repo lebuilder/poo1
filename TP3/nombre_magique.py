@@ -15,13 +15,13 @@ class Devine(Exception):
 
     def __str__(self) -> str:
         if Devine.NB_TENTATIVES > 10:
-            return "trop tard"
+            return "trop tard, tu es lent comme une limace"
         elif self.__proposition < Devine.NB_MAGIQUE:
-            return "trop petit"
+            return "trop petit, il faut voir plus grand dans la vie"
         elif self.__proposition > Devine.NB_MAGIQUE:
-            return "trop grand"
+            return "trop grand, vois pas aussi grand dans la vie"
         else:
-            return f"bravo, vous avez trouvé en {Devine.NB_TENTATIVES} tentatives"
+            return f"bravo, tu as trouvé en {Devine.NB_TENTATIVES} tentatives, tu aurai pus faire mieux"
 
     @staticmethod
     def set_nb_magique():
@@ -36,9 +36,9 @@ if __name__ == "__main__":
     Devine.set_nb_magique()
     while not Devine.get_fin():
         try:
-            valeur = int(input("entre un nombre : "))
+            valeur = int(input("entre un nombre et plus vite que sa  : "))
             raise Devine(valeur)  # une exception est levée à chaque nouvelle proposition
         except Devine as mex:
             print(mex)
         except ValueError:
-            print("erreur de saisie ... un nombre est attendu")
+            print("erreur de saisie ... un nombre est attendu, tu es trop con sérieux ")
